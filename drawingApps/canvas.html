@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Collaborative Drawing App</title>
+        <style>
+            #canvas{
+                border: 2px solid black;
+            }
+            div:hover > #hov{
+            display : block;
+            }
+
+            #hov{
+            display:none;
+            position:absolute;
+            font-style: italic;
+            font-size:20px;
+            font-weight: bold;
+            color: red;
+            }
+        </style>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="canvas.js" charset="utf-8" defer></script> 
+
+    </head>
+    <body>
+        <div id="main">
+        <ul id="message"></ul>
+        <div id="hov">
+        </div>
+        <canvas id="canvas"></canvas>
+        </div>
+        <script>
+                var name = prompt("Please enter your name");            
+                var socket = io();                    
+                console.log(name);
+                $('#hov').append(name);
+                socket.emit("new user", name);
+                socket.on("message", (msg)=>{
+                    $('#message').append($("<li>").text(msg));
+                });
+                socket.on("canvas", (ctx)=>{
+                    const canvas = document.getElementById("canvas");
+                    const Newctx = canvas.getContext("2d");
+                    const image = new Image();
+                    image.src = ctx;
+                    Newctx.drawImage(image, 0, 0);
+                });
+        </script>
+    </body>
+</html>

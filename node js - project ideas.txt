@@ -1,0 +1,35 @@
+
+1. Real-time Collaboration Apps -- Done
+	- provide features like audio and video conferencing, document sharing, 
+	  project management, and collaborative working on different documents.
+
+2. Basic Users System  -- Done
+	- In the case of registration and login, you should generate a JWT token
+	  for the user that will be returned from the API.
+
+3. Email Sender -- Done
+	- For this project, you can explore the Nodemailer plugin for sending emails.
+
+4. Collaborative Drawing App  -- Done
+	- This application’s main idea is to create the canvas element where users would be able to draw.
+
+	  Let me tell you what’s needed in this app. You need to start by setting the Node JS application with Socket.io
+	  installed.
+
+	  Then you need to add some HTML to prepare a simple interface with canvas element for users to draw, and you can style it any way you’d like. 
+	  Then you have to handle the mouse events that will be drawing. 
+
+	  And the last thing is to create the server-side code, where you’d use the Socket.io to check when new users join and when they start drawing. 
+
+5. Video Streaming Platform  -- Done
+	- In this project, you have to take care of dividing the video content for the chunks to not send all to the frontend at once, 
+	  and that’s what should happen in the Node JS. 
+	  Also, you would need to write some HTML5 to create a video player, and some Javascript on frontend to handle player buttons. 
+
+6. Web Scraper  -- Done
+	- For this application, some plugins like Cheerio or Puppeteer could be useful. 
+	  In this kind of application, you’d need to get interesting information from the website code, and then save it to the file or the database.
+
+7. Natural Language Processing (NLP) -- Done
+	- You can build a voice-to-text application, an autocomplete application, or a simple subtitling application capable of listening to the audio 
+	  and converting it into natural language text. 
